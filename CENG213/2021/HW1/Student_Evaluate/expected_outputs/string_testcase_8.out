@@ -1,0 +1,110 @@
+-> Creating a string with string constructor.
+-> Printing the string.
+['m','e','r','h','a','b','a',' ','d','u','n','y','a']
+-> Getting all substrings.
+substring from pos=0 and len=0 is: 
+substring from pos=0 and len=1 is: m
+substring from pos=0 and len=2 is: me
+substring from pos=0 and len=3 is: mer
+substring from pos=0 and len=4 is: merh
+substring from pos=0 and len=5 is: merha
+substring from pos=0 and len=6 is: merhab
+substring from pos=0 and len=7 is: merhaba
+substring from pos=0 and len=8 is: merhaba 
+substring from pos=0 and len=9 is: merhaba d
+substring from pos=0 and len=10 is: merhaba du
+substring from pos=0 and len=11 is: merhaba dun
+substring from pos=0 and len=12 is: merhaba duny
+substring from pos=0 and len=13 is: merhaba dunya
+substring from pos=1 and len=0 is: 
+substring from pos=1 and len=1 is: e
+substring from pos=1 and len=2 is: er
+substring from pos=1 and len=3 is: erh
+substring from pos=1 and len=4 is: erha
+substring from pos=1 and len=5 is: erhab
+substring from pos=1 and len=6 is: erhaba
+substring from pos=1 and len=7 is: erhaba 
+substring from pos=1 and len=8 is: erhaba d
+substring from pos=1 and len=9 is: erhaba du
+substring from pos=1 and len=10 is: erhaba dun
+substring from pos=1 and len=11 is: erhaba duny
+substring from pos=1 and len=12 is: erhaba dunya
+substring from pos=2 and len=0 is: 
+substring from pos=2 and len=1 is: r
+substring from pos=2 and len=2 is: rh
+substring from pos=2 and len=3 is: rha
+substring from pos=2 and len=4 is: rhab
+substring from pos=2 and len=5 is: rhaba
+substring from pos=2 and len=6 is: rhaba 
+substring from pos=2 and len=7 is: rhaba d
+substring from pos=2 and len=8 is: rhaba du
+substring from pos=2 and len=9 is: rhaba dun
+substring from pos=2 and len=10 is: rhaba duny
+substring from pos=2 and len=11 is: rhaba dunya
+substring from pos=3 and len=0 is: 
+substring from pos=3 and len=1 is: h
+substring from pos=3 and len=2 is: ha
+substring from pos=3 and len=3 is: hab
+substring from pos=3 and len=4 is: haba
+substring from pos=3 and len=5 is: haba 
+substring from pos=3 and len=6 is: haba d
+substring from pos=3 and len=7 is: haba du
+substring from pos=3 and len=8 is: haba dun
+substring from pos=3 and len=9 is: haba duny
+substring from pos=3 and len=10 is: haba dunya
+substring from pos=4 and len=0 is: 
+substring from pos=4 and len=1 is: a
+substring from pos=4 and len=2 is: ab
+substring from pos=4 and len=3 is: aba
+substring from pos=4 and len=4 is: aba 
+substring from pos=4 and len=5 is: aba d
+substring from pos=4 and len=6 is: aba du
+substring from pos=4 and len=7 is: aba dun
+substring from pos=4 and len=8 is: aba duny
+substring from pos=4 and len=9 is: aba dunya
+substring from pos=5 and len=0 is: 
+substring from pos=5 and len=1 is: b
+substring from pos=5 and len=2 is: ba
+substring from pos=5 and len=3 is: ba 
+substring from pos=5 and len=4 is: ba d
+substring from pos=5 and len=5 is: ba du
+substring from pos=5 and len=6 is: ba dun
+substring from pos=5 and len=7 is: ba duny
+substring from pos=5 and len=8 is: ba dunya
+substring from pos=6 and len=0 is: 
+substring from pos=6 and len=1 is: a
+substring from pos=6 and len=2 is: a 
+substring from pos=6 and len=3 is: a d
+substring from pos=6 and len=4 is: a du
+substring from pos=6 and len=5 is: a dun
+substring from pos=6 and len=6 is: a duny
+substring from pos=6 and len=7 is: a dunya
+substring from pos=7 and len=0 is: 
+substring from pos=7 and len=1 is:  
+substring from pos=7 and len=2 is:  d
+substring from pos=7 and len=3 is:  du
+substring from pos=7 and len=4 is:  dun
+substring from pos=7 and len=5 is:  duny
+substring from pos=7 and len=6 is:  dunya
+substring from pos=8 and len=0 is: 
+substring from pos=8 and len=1 is: d
+substring from pos=8 and len=2 is: du
+substring from pos=8 and len=3 is: dun
+substring from pos=8 and len=4 is: duny
+substring from pos=8 and len=5 is: dunya
+substring from pos=9 and len=0 is: 
+substring from pos=9 and len=1 is: u
+substring from pos=9 and len=2 is: un
+substring from pos=9 and len=3 is: uny
+substring from pos=9 and len=4 is: unya
+substring from pos=10 and len=0 is: 
+substring from pos=10 and len=1 is: n
+substring from pos=10 and len=2 is: ny
+substring from pos=10 and len=3 is: nya
+substring from pos=11 and len=0 is: 
+substring from pos=11 and len=1 is: y
+substring from pos=11 and len=2 is: ya
+substring from pos=12 and len=0 is: 
+substring from pos=12 and len=1 is: a
+-> Printing the string.
+['m','e','r','h','a','b','a',' ','d','u','n','y','a']

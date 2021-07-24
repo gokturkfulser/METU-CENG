@@ -1,0 +1,9 @@
+-> Creating a string with default constructor.
+-> Calculating the length.
+length is zero
+-> Checking if the string is empty or not.
+string is empty
+-> Checking if the string is palindrome or not.
+string is palindrome
+-> Printing the string.
+[]

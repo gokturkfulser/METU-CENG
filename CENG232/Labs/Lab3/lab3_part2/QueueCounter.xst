@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/user/Desktop/Ceng232(logic)/21/Labs/Lab3/lab3_part2/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/user/Desktop/Ceng232(logic)/21/Labs/Lab3/lab3_part2/xst"
+elaborate
+-ifn QueueCounter.prj
+-ifmt mixed

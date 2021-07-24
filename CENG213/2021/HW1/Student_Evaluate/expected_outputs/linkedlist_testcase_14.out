@@ -1,0 +1,44 @@
+-> Creating a linked list with default constructor.
+-> Making some insertions to the list.
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Getting node with data 30.
+no node with data 30 exists
+-> Getting node with data 31.
+exists. data must be 31. it is 31
+-> Getting node with data 32.
+exists. data must be 32. it is 32
+-> Getting node with data 33.
+exists. data must be 33. it is 33
+-> Getting node with data 34.
+exists. data must be 34. it is 34
+-> Getting node with data 35.
+exists. data must be 35. it is 35
+-> Getting node with data 36.
+no node with data 36 exists
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7

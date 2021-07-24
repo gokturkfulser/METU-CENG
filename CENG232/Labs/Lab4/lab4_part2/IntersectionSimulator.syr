@@ -1,0 +1,375 @@
+Release 12.4 - xst M.81d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: IntersectionSimulator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "IntersectionSimulator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "IntersectionSimulator"
+Output Format                      : NGC
+Target Device                      : xc3s250e-5-cp132
+
+---- Source Options
+Top Module Name                    : IntersectionSimulator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "lab4_2.v" in library work
+Module <IntersectionSimulator> compiled
+No errors in compilation
+Analysis of file <"IntersectionSimulator.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <IntersectionSimulator> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <IntersectionSimulator>.
+Module <IntersectionSimulator> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <IntersectionSimulator>.
+    Related source file is "lab4_2.v".
+WARNING:Xst:1305 - Output <numOfCarsA> is never assigned. Tied to value 00000.
+WARNING:Xst:1305 - Output <numOfCarsB> is never assigned. Tied to value 00000.
+WARNING:Xst:1306 - Output <blackListDisplay> is never assigned.
+WARNING:Xst:647 - Input <mode> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <plateIn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <action> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <am_pm>.
+    Found 1-bit register for signal <greenForA>.
+    Found 1-bit register for signal <greenForB>.
+    Found 4-bit up counter for signal <hour>.
+    Found 6-bit up counter for signal <minute>.
+    Found 7-bit down counter for signal <remainingTime>.
+    Found 1-bit register for signal <rushHourWarning>.
+    Found 6-bit up counter for signal <second>.
+    Found 1-bit register for signal <lastgreen>.
+    Found 7-bit register for signal <nextRedDurationA>.
+    Found 7-bit addsub for signal <nextRedDurationA$share0000> created at line 120.
+    Found 7-bit register for signal <nextRedDurationB>.
+    Found 7-bit addsub for signal <nextRedDurationB$share0000> created at line 98.
+    Summary:
+	inferred   4 Counter(s).
+	inferred  19 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <IntersectionSimulator> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 7-bit addsub                                          : 2
+# Counters                                             : 4
+ 4-bit up counter                                      : 1
+ 6-bit up counter                                      : 2
+ 7-bit down counter                                    : 1
+# Registers                                            : 7
+ 1-bit register                                        : 5
+ 7-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 7-bit addsub                                          : 2
+# Counters                                             : 4
+ 4-bit up counter                                      : 1
+ 6-bit up counter                                      : 2
+ 7-bit down counter                                    : 1
+# Registers                                            : 19
+ Flip-Flops                                            : 19
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <IntersectionSimulator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block IntersectionSimulator, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 42
+ Flip-Flops                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : IntersectionSimulator.ngr
+Top Level Output File Name         : IntersectionSimulator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 52
+
+Cell Usage :
+# BELS                             : 116
+#      GND                         : 1
+#      INV                         : 6
+#      LUT2                        : 11
+#      LUT2_L                      : 2
+#      LUT3                        : 28
+#      LUT3_D                      : 4
+#      LUT3_L                      : 2
+#      LUT4                        : 44
+#      LUT4_D                      : 6
+#      LUT4_L                      : 7
+#      MUXF5                       : 5
+# FlipFlops/Latches                : 42
+#      FD                          : 1
+#      FDE                         : 25
+#      FDR                         : 6
+#      FDRE                        : 10
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 37
+#      OBUF                        : 37
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250ecp132-5 
+
+ Number of Slices:                       55  out of   2448     2%  
+ Number of Slice Flip Flops:             42  out of   4896     0%  
+ Number of 4 input LUTs:                110  out of   4896     2%  
+ Number of IOs:                          52
+ Number of bonded IOBs:                  38  out of     92    41%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 42    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.854ns (Maximum Frequency: 170.836MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.591ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.854ns (frequency: 170.836MHz)
+  Total number of paths / destination ports: 927 / 93
+-------------------------------------------------------------------------
+Delay:               5.854ns (Levels of Logic = 3)
+  Source:            second_3 (FF)
+  Destination:       minute_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: second_3 to minute_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.514   0.651  second_3 (second_3)
+     LUT3:I0->O            1   0.612   0.360  rushHourWarning_cmp_eq0002_SW0 (N22)
+     LUT4:I3->O           16   0.612   0.948  rushHourWarning_cmp_eq0002 (rushHourWarning_cmp_eq0002)
+     LUT2:I1->O           10   0.612   0.750  hour_not00011 (hour_not0001)
+     FDRE:R                    0.795          minute_0
+    ----------------------------------------
+    Total                      5.854ns (3.145ns logic, 2.709ns route)
+                                       (53.7% logic, 46.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 27 / 27
+-------------------------------------------------------------------------
+Offset:              4.591ns (Levels of Logic = 1)
+  Source:            rushHourWarning (FF)
+  Destination:       rushHourWarning (PAD)
+  Source Clock:      clk rising
+
+  Data Path: rushHourWarning to rushHourWarning
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              18   0.514   0.908  rushHourWarning (rushHourWarning_OBUF)
+     OBUF:I->O                 3.169          rushHourWarning_OBUF (rushHourWarning)
+    ----------------------------------------
+    Total                      4.591ns (3.683ns logic, 0.908ns route)
+                                       (80.2% logic, 19.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.58 secs
+ 
+--> 
+
+Total memory usage is 215192 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

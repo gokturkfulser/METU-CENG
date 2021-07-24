@@ -1,0 +1,64 @@
+-> Creating a linked list with default constructor.
+-> Making some insertions to the list.
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Making some deletions from the list and printing it after each deletion.
+-> deleteNode ...
+31
+32
+33
+34
+-> Printing the list in reverse.
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 6
+-> deleteNode ...
+32
+33
+34
+-> Printing the list in reverse.
+34
+33
+32
+-> Calculating the size including dummies.
+size is 5
+-> deleteNode ...
+32
+34
+-> Printing the list in reverse.
+34
+32
+-> Calculating the size including dummies.
+size is 4
+-> deleteAllNodes ...
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2
+-> Making some more insertions to the list.
+-> Printing the list.
+38
+37
+36
+-> Printing the list in reverse.
+36
+37
+38
+-> Calculating the size including dummies.
+size is 5

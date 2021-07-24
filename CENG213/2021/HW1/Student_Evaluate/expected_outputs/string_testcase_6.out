@@ -1,0 +1,16 @@
+-> Creating a string with default constructor.
+-> Appending and inserting some characters to the string.
+-> Printing the string.
+['m','e','r','h','a','b','a']
+-> Erasing some characters and finally erasing all characters of the string. Printing the string after each erasing.
+-> eraseCharacters ...
+['e','r','h','a','b','a']
+-> eraseCharacters ...
+['e','r','h','b','a']
+-> eraseCharacters ...
+['e','b','a']
+-> eraseAllCharacters ...
+[]
+-> Making some more insertions to the string.
+-> Printing the string.
+['d','u','n','y','a']

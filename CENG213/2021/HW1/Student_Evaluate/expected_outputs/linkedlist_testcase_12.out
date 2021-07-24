@@ -1,0 +1,35 @@
+-> Creating a linked list with default constructor.
+-> Making some insertions to the list.
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Calling some functions on the list.
+data of first data node is 31
+data of last data node is 35
+size is 5
+linked list is not empty
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7

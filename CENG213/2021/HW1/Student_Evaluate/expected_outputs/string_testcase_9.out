@@ -1,0 +1,13 @@
+-> Creating a string with string constructor.
+-> Printing the string.
+['m','e','r','h','a','b','a',' ','d','u','n','y','a']
+-> Splitting the string with space character as the separator and printing the list.
+merhaba
+dunya
+-> Splitting the string with a character as the separator and printing the list.
+merh
+b
+ duny
+
+-> Printing the string.
+['m','e','r','h','a','b','a',' ','d','u','n','y','a']

@@ -1,0 +1,30 @@
+-> Creating a linked list with default constructor.
+-> Creating a node with data 33. Node is not in the list.
+-> Trying to delete that node from the list and then printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2
+-> Trying to delete a node with data 33 from the list and then printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2
+-> Trying to delete all nodes from the list and then printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2
+-> Trying to get a node with data 33 from the list.
+no node with data 33 exists
+-> Checking if the list contains the previously created node or not.
+linked list does not contain that node
+-> Printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2

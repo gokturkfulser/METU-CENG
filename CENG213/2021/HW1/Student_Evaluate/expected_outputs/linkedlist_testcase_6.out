@@ -1,0 +1,9 @@
+-> Creating a linked list with default constructor.
+-> Creating a node with data 35. Node is not in the list.
+-> Inserting a node with data 36 to the list before that node.
+-> Printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2

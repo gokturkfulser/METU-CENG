@@ -1,0 +1,72 @@
+-> Creating a linked list with default constructor.
+-> Making some insertions to the list.
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Creating a duplicate linked list with assignment constructor.
+-> Printing the duplicate list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Removing a node from the original list.
+-> Printing the duplicate list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Printing the list.
+31
+32
+34
+35
+-> Printing the list in reverse.
+35
+34
+32
+31
+-> Calculating the size including dummies.
+size is 6

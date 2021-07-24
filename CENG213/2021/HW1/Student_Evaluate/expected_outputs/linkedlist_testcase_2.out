@@ -1,0 +1,19 @@
+-> Creating a linked list with default constructor.
+-> Getting the first data node.
+no first data node
+-> Getting the last data node.
+no last data node
+-> Getting the dummy head node.
+there exists a dummy head node
+-> Getting the dummy tail node.
+there exists a dummy tail node
+-> Calculating the size.
+size is zero
+-> Checking if the list is empty or not.
+linked list is empty
+-> Printing the list.
+The list is empty.
+-> Printing the list in reverse.
+The list is empty.
+-> Calculating the size including dummies.
+size is 2

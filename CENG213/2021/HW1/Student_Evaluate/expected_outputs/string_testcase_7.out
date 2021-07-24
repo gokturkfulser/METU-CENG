@@ -1,0 +1,17 @@
+-> Creating some strings with string constructor.
+-> Checking if they are palindrome or not?
+is "a" palindrome? yes
+is "aa" palindrome? yes
+is "ab" palindrome? no
+is "aba" palindrome? yes
+is "abc" palindrome? no
+is "saippuakivikauppias" palindrome? yes
+is "eva can i see bees in a cave" palindrome? yes
+-> Printing the strings.
+['a']
+['a','a']
+['a','b']
+['a','b','a']
+['a','b','c']
+['s','a','i','p','p','u','a','k','i','v','i','k','a','u','p','p','i','a','s']
+['e','v','a',' ','c','a','n',' ','i',' ','s','e','e',' ','b','e','e','s',' ','i','n',' ','a',' ','c','a','v','e']

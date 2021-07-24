@@ -1,0 +1,16 @@
+-> Creating some strings with string constructor.
+-> Comparing the strings.
+is "a" < "aa"? yes
+is "ab" < "aa"? no
+is "aa" < "aba"? yes
+is "abc" < "aba"? no
+is "aba" < "saippuakivikauppias"? yes
+is "saippuakivikauppias" < "eva can i see bees in a cave"? no
+-> Printing the strings.
+['a']
+['a','a']
+['a','b']
+['a','b','a']
+['a','b','c']
+['s','a','i','p','p','u','a','k','i','v','i','k','a','u','p','p','i','a','s']
+['e','v','a',' ','c','a','n',' ','i',' ','s','e','e',' ','b','e','e','s',' ','i','n',' ','a',' ','c','a','v','e']

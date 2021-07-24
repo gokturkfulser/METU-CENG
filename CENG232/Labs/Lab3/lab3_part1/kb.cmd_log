@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/user/Desktop/Ceng232(logic)/21/Labs/Lab3/lab3_part1/kb.xst" -ofn "C:/Users/user/Desktop/Ceng232(logic)/21/Labs/Lab3/lab3_part1/kb.syr" 

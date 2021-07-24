@@ -1,0 +1,456 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Karaman, Arda\\
+  \texttt{e2237568@ceng.metu.edu.tr}
+  \and
+  Fulser, Göktürk\\
+  \texttt{e2237386@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2021 \\
+Homework 4}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    \begin{align*}
+        g(t) = 4x(t) - 5y(t) + \int(x(t)-6y(t))dt\\
+        \text{and } y(t) \int g(t)dt = \int[4x(t) - 5y(t) + \int(x(t)-6y(t)dt]dt\\
+    \end{align*}
+Differentiate it once
+    \begin{align*}
+        \frac{dy(t)}{dt} = 4x(t) - 5y(t) + \int(x(t)-6y(t))dt\\
+    \end{align*}
+Differentiate it once more
+    \begin{align*}
+        \frac{d^2y(t)}{dt^2} = \frac{4dx(t)}{dt} - \frac{5dy(t)}{dt} + x(t)-6y(t)\\
+    \end{align*}
+So differential equation is;
+    \begin{align*}
+        \frac{d^2y(t)}{dt^2} + \frac{5dy(t)}{dt} +6y(t) = \frac{4dx(t)}{dt} + x(t)
+    \end{align*}
+    
+    
+    
+    
+    \item %write the solution of q1b
+    \begin{align*}
+        (j\omega)^2 Y(j\omega) + 5 (j\omega) Y(j\omega) + 6Y(j\omega) = 4(j\omega)X(j\omega) + X(j\omega)\\
+    \end{align*}
+So Frequency Response is;
+    \begin{align*}
+        Y(j\omega)[ 6 + 5j\omega - \omega^2 ] = X(j\omega)[ 1+ 4j\omega ]
+    \end{align*}
+    
+    
+    
+    
+    
+    \item %write the solution of q1c
+    \begin{align*}
+        \frac{Y(j\omega)}{X(j\omega)} = \frac{1+4j\omega}{6-\omega^2+5j\omega}\\
+    \end{align*}
+By using Partial Fraction;
+    \begin{align*}
+        H(j\omega) = \frac{Y(j\omega)}{X(j\omega)} = \frac{7}{2 + j\omega} - \frac{3}{3 + j\omega}\\
+    \end{align*}
+By applying inverse Fourier transform;
+    \begin{align*}
+        h(t) = (7e^{-2t} - 3e^{-3t})u(t)
+    \end{align*}
+    \item %write the solution of q1d
+    \begin{align*}
+        x(t) = \frac{1}{4} e^{\frac{-t}{4}}u(t)\\
+    \end{align*}
+By applying Fourier Transform;
+    \begin{align*}
+        X(j\omega) = \frac{1}{4}(\frac{1}{\frac{1}{4}+j\omega})\\
+        \frac{Y(j\omega)}{X(j\omega)} = (\frac{7}{2+j\omega} - \frac{3}{3+j\omega})\\
+        Y(j\omega) = (\frac{7}{2+j\omega} - \frac{3}{3+j\omega})\cdot \frac{1}{4}(\frac{1}{\frac{1}{4}+j\omega})\\
+        Y(j\omega) = \frac{1}{4}[(\frac{7}{2+j\omega})\cdot (\frac{1}{\frac{1}{4}+j\omega}) - (\frac{3}{3+j\omega})\cdot (\frac{1}{\frac{1}{4}+j\omega})]\\
+        Y(j\omega) = \frac{1}{4} [\frac{4}{\frac{1}{4}+j\omega} - \frac{4}{2+j\omega} - \frac{1.090}{\frac{1}{4}+j\omega} + \frac{1.090}{3 + j\omega}]\\
+        Y(j\omega) = \frac{1}{4}[\frac{2.9}{\frac{1}{4}+j\omega} - \frac{4}{2+j\omega} + \frac{1.09}{3 + j\omega}]\\
+    \end{align*}
+By applying inverse Fourier Transform;
+    \begin{align*}
+        y(t) = \frac{1}{4}(2.9e^{\frac{-t}{4}} - 4e^{-2t} + 1.09e^{-3t})u(t)\\
+        y(t) = (0.72e^{\frac{-t}{4}} - e^{-2t} + 0.27e^{-3t})u(t)
+    \end{align*}
+    \end{enumerate}
+
+
+
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    \begin{align*}
+        \frac{Y(j\omega)}{X(j\omega)} = \frac{j\omega + 4}{ (j\omega)^2 + 5j\omega + 6} \\
+        Y(j\omega) \cdot (j\omega)^2 + Y(j\omega) \cdot 5j\omega + Y(j\omega) \cdot 6 = X(j\omega) \cdot j\omega + X(j\omega) \cdot 4 
+    \end{align*} \\
+    
+    By applying inverse Fourier transform;
+    \begin{align*}
+        \frac{d^2(y)}{dt^2} + 5 \cdot \frac{d(y)}{dt} + 6 \cdot y(t) = \frac{d(x)}{dt} + x(t) \cdot 4
+    \end{align*} \\
+    
+    So the answer becomes;
+    \begin{align*}
+        y \prime \prime + 5 \cdot y\prime + 6 \cdot y = x\prime + 4\cdot x
+    \end{align*}
+    
+    
+    
+    \item %write the solution of q2b
+    \begin{align*}
+        H(j\omega) = \frac{j\omega + 4}{ (j\omega)^2 + 5j\omega + 6} \\
+        H(j\omega) = \frac{j\omega + 4}{(j\omega + 2) \cdot (j\omega + 3)} \\
+        H(j\omega) = \frac{2}{(j\omega + 2)} - \frac{1}{(j\omega + 3)}
+    \end{align*}
+    
+    By applying inverse Fourier transform;
+    \begin{align*}
+        h(t) = 2 e^{-2t} \mu(t) + e^{-3t} \mu(t) \\
+        \text{So the answer becomes; } h(t) = (2 e^{-2t} + e^{-3t}) \cdot \mu(t) 
+    \end{align*}
+    
+    
+    
+    \item %write the solution of q2c
+    \begin{align*}
+        Y(j\omega) = X(j\omega) \cdot H(j\omega) \\
+        X(j\omega) = e^{-4t} \mu(t) - t \cdot e^{-4t} \mu(t) \text{ is given.}
+    \end{align*}
+    
+    By applying inverse Fourier transform;
+    \begin{align*}
+        X(j\omega) = \frac{1}{(j\omega + 4)} - \frac{1}{(j\omega + 4)^2} \\
+        X(j\omega) = \frac{j\omega + 4 - 1}{(j\omega + 4)^2}
+    \end{align*}
+    
+    By combining the part above;
+    \begin{align*}
+        Y(j\omega) = \frac{j\omega + 3}{(j\omega + 4)^2} \cdot \frac{j\omega + 4}{(j\omega + 2) \cdot (j\omega + 3)} \\
+        Y(j\omega) = \frac{1}{(j\omega + 4) \cdot (j\omega + 2)}
+    \end{align*}
+    
+    
+    
+    \item %write the solution of q2d
+    \begin{align*}
+        Y(j\omega) = \frac{1}{(j\omega + 4) \cdot (j\omega + 2)} = \frac{1}{2} \cdot [\frac{1}{(j\omega + 2)} - \frac{1}{(j\omega + 4)}]
+    \end{align*}
+    
+    By applying inverse Fourier transform;
+    \begin{align*}
+        y(t) = \frac{1}{2} \cdot e^{-2t} \mu(t) - \frac{1}{2} \cdot e^{-4t} \mu(t) \\
+        y(t) = \frac{1}{2} \cdot [e^{-2t} - e^{-4t}] \cdot \mu(t)
+    \end{align*}
+    
+    \end{enumerate}
+
+\item %write the solution of q3  
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    \begin{align*}
+        f(t) = e^{-|t|}\\
+    \end{align*}
+The Fourier transform of signal f(t):
+    \begin{align*}
+        F(\omega) = \int_{-\infty}^{\infty} f(t)e^{-j\omega t}dt\\
+        F(\omega) = \int_{-\infty}^{\infty} e^{-|t|}e^{-j\omega t}dt\\
+        F(\omega) = \int_{-\infty}^{0} e^{t}e^{-j\omega t}dt + \int_{0}^{\infty} e^{-t}e^{-j\omega t}dt\\
+        F(\omega) = \int_{-\infty}^{0} e^{t(1-j\omega)}dt + \int_{0}^{\infty} e^{-t(1+j\omega)}dt\\
+        F(\omega) = [\frac{1}{1-j\omega}e^{t(1-j\omega)}]_{-\infty}^{0} - [\frac{1}{(1+j\omega)}e^{-t(1+j\omega)}]_{0}^{\infty}\\
+        F(\omega) = [\frac{1}{1-j\omega} - 0] -[0 - \frac{1}{1+j\omega}]\\
+        F(\omega) = [\frac{1}{1-j\omega}] + [\frac{1}{1+j\omega}]\\
+    \end{align*}
+So the Fourier transform of  \(f(t) = e^{-|t|}\)
+    \begin{align*}
+        F(\omega) = \frac{2}{1+\omega^2}
+    \end{align*}
+    \item %write the solution of q3b
+    Fourier transform of 
+    \begin{align*}
+        f(t) = e^{-|t|} \text{ is}\\
+        F(\omega) = \frac{2}{1+\omega^2}\\
+    \end{align*}
+    Fourier transform of
+    \begin{align*}
+        x(t) = te^{-|t|}\\
+        x(t) = tf(t) \text{ is}\\
+    \end{align*}
+By using multiplication of t with f(t) property;
+    \begin{align*}
+        X(\omega) = j\frac{dF(\omega)}{d\omega}\\
+        X(\omega) = j[-\frac{4\omega}{(1+\omega^2)^2}]\\
+    \end{align*}
+So the Fourier Transform of \(x(t) = te^{-|t|}\)
+    \begin{align*}
+        X(\omega) = -j[\frac{4\omega}{(1+\omega^2)^2}]\\
+    \end{align*}
+    \item %write the solution of q3c
+    Let;
+    \begin{align*}
+        g(t) = \frac{4t}{(1+t^2)^2}\\
+    \end{align*}
+The Fourier transform of \(x(t) = te^{-|t|}\) is
+    \begin{align*}
+        X(\omega) = -j[\frac{4\omega}{(1+\omega^2)^2}]\\
+        x(t) \leftrightarrow X(\omega)\\
+        te^{-|t|} \leftrightarrow -j[\frac{4\omega}{(1+\omega^2)^2}]\\
+    \end{align*}
+By using the duality property of Fourier transform;
+    \begin{align*}
+        \text{If } x(t) \leftrightarrow X(\omega) \text{ then }\\
+        X(t) \leftrightarrow 2\pi x(-\omega)\\
+        -j[\frac{4t}{(1+t^2)^2}] \leftrightarrow 2\pi(-\omega)e^{-|(-\omega)|}\\
+        -j[\frac{4t}{(1+t^2)^2}] \leftrightarrow -2\pi(\omega)e^{-|\omega|}\\
+        j[\frac{4t}{(1+t^2)^2}] \leftrightarrow 2\pi(\omega)e^{-|\omega|}\\
+    \end{align*}
+Dividing both sides by j;
+    \begin{align*}
+        \frac{4t}{(1+t^2)^2} \leftrightarrow \frac{1}{j}2\pi\omega e^{-|w|}\\
+        \frac{4t}{(1+t^2)^2} \leftrightarrow -j\cdot 2\pi\omega e^{-|w|}\\
+    \end{align*}
+Hence, The Fourier Transform of 
+    \begin{align*}
+        g(t) = \frac{4t}{(1+t^2)^2} \text{ is }\\
+        G(\omega) = -j\cdot2\pi\omega e^{-|\omega|}
+        \end{align*}
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    The difference equation can be denoted as;
+    \begin{align*}
+        2 x(n) + \frac{3}{4} y(n-1) - \frac{1}{8} y(n-2) = y(n)
+    \end{align*}
+    
+    \item %write the solution of q4b
+    In order to find the frequency response of the system;
+    \begin{align*}
+        2X(e^j\omega) + \frac{3}{4} e^{-j\omega} Y(e^{j\omega}) - \frac{1}{8} e^{-2j\omega} Y(e^{j\omega}) = Y(e^{-j\omega}) \\
+        Y(e^{-j\omega}) \cdot [1 - \frac{3}{4} e^{-j\omega} + \frac{1}{8} e^{-2j\omega}] = 2X(e^{j\omega}) \\
+        \text{We know that ;} \\
+        H(e^{j\omega}) = \frac{Y(e^{j\omega})}{X(e^{j\omega})} \\
+        H(e^{j\omega}) = \frac{2}{1 - \frac{3}{4} e^{-j\omega} + \frac{1}{8} e^{-2j\omega}}
+    \end{align*}
+    
+    \item %write the solution of q4c
+    In order to find the impulse response of the system;
+    \begin{align*}
+        H(e^{j\omega}) = \frac{2}{(1 - \frac{1}{2} e^{-j\omega}) \cdot (1 - \frac{1}{4} e^{-j\omega})} \\
+        H(e^{j\omega}) = \frac{A}{(1 - \frac{1}{2} e^{-j\omega})} + \frac{B}{(1 - \frac{1}{4} e^{-j\omega})} \\
+        ... \\
+        H(e^{j\omega}) = \frac{4}{(1 - \frac{1}{2} e^{-j\omega})} - \frac{2}{(1 - \frac{1}{4} e^{-j\omega})} 
+    \end{align*}
+    
+    Therefore the answer becomes; 
+    \begin{align*}
+        f(n) = 4 (\frac{1}{2})^n \mu(n) - 2 (\frac{1}{4})^n \mu(n)
+    \end{align*}
+    
+    \item %write the solution of q4d
+    Given;
+    \begin{align*}
+        x(n) = (\frac{1}{4})^n \mu(n) \\
+        x(n) = \frac{1}{1 - \frac{1}{4} e^{-j\omega}}
+    \end{align*}
+    
+    So $Y(e^{j\omega})$ becomes;
+    \begin{align*}
+        Y(e^{j\omega}) = X(e^{j\omega}) \cdot H(e^{j\omega}) \\
+        Y(e^{j\omega}) = \frac{2}{(1 - \frac{1}{2} e^{-j\omega}) \cdot ((1 - \frac{1}{4} e^{-j\omega})^2)}
+    \end{align*}
+    
+    By applying the partial fraction expansion;
+    \begin{align*}
+        Y(e^{j\omega}) = \frac{A}{1 - \frac{1}{2}e^{-j\omega}} + \frac{B_0}{1 - \frac{1}{4}e^{-j\omega}} + \frac{B_1}{(1 - \frac{1}{4}e^{-j\omega})^2} \\
+        ... \\
+        B_1 = -2 \\
+        B_0 = 4 \\
+        A = 8
+    \end{align*}
+    
+    So the equation becomes;
+    \begin{align*}
+        Y(e^{j\omega}) = \frac{8}{1 - \frac{1}{2}e^{-j\omega}} + \frac{4}{1 - \frac{1}{4}e^{-j\omega}} - \frac{2}{(1 - \frac{1}{4}e^{-j\omega})^2} \\
+        y(n) = 8 (\frac{1}{2})^n \mu(n) + 4 (\frac{1}{4})^n \mu(n) - 2 (n+1) (\frac{1}{4})^n \mu(n) 
+    \end{align*}
+    
+    \end{enumerate}
+
+\item %write the solution of q5
+When two systems are said to be connected in parallel the frequency response of the combined system becomes;
+\begin{align*}
+    H(e^{j\omega}) = H_{1}(e^{j\omega}) + H_{2}(e^{j\omega}) \\ 
+    \text{So $H_1$ becomes,} \\
+    H_{1}(e^{j\omega}) = \frac{1}{1 - \frac{1}{3}e^{-j\omega}}
+\end{align*}
+
+So the we can write the equation as,
+\begin{align*}
+    \frac{5e^{-j\omega} - 12}{e^{-2j\omega} - 7e^{-j\omega} + 12} = \frac{1}{1 - \frac{1}{3}e^{-j\omega}} + H_{2}(e^{j\omega})
+\end{align*}
+
+So to find $H_2$;
+\begin{align*}
+    \frac{\frac{5}{12} e^{-j\omega} - 1}{(1 - \frac{1}{3}e^{-j\omega}) \cdot (1 - \frac{1}{4}e^{-j\omega})} = \frac{1}{1 - \frac{1}{3}e^{-j\omega}} + H_{2}(e^{j\omega}) \\
+    \frac{\frac{5}{12} e^{-j\omega} - 1}{(1 - \frac{1}{3}e^{-j\omega}) \cdot (1 - \frac{1}{4}e^{-j\omega})} = \frac{1}{1 - \frac{1}{3}e^{-j\omega}} + \frac{A}{1 - \frac{1}{4}e^{-j\omega}}
+\end{align*}
+
+So we can deduct that $H_{2}(e^{j\omega}) = \frac{A}{1 - \frac{1}{4}e^{-j\omega}}$. \\
+So by solving the mathematical equations, we were left with this;
+\begin{align*}
+    \frac{5}{12} e^{-j\omega} - 1 = (1 + A) + (- \frac{1}{4} - \frac{A}{3}) e^{-j\omega} \\
+    \text{by equating the $(e^{-j\omega})$ terms,} \\
+    \frac{5}{12} = -\frac{1}{4} - \frac{A}{3} \\
+    A = -2 \\
+\end{align*}
+
+So the answer becomes,
+\begin{align*}
+    h_{2}(n) = -2 (\frac{1}{4})^n \mu(n)
+\end{align*}
+
+\item %write the solution of q6
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q6a
+    To determine the difference equation, we represent $H(e^{j\omega})$ as $\frac{Ye^{j\omega}}{X(e^{j\omega})}$.
+    \begin{align*}
+        H(e^{j\omega}) = \frac{Y(e^{j\omega})}{X(e^{j\omega})} = \frac{1}{1 - \frac{1}{6}e^{-j\omega} - \frac{1}{6}e^{-j2\omega}}\\
+        Y(e^{j\omega}) - \frac{1}{6}e^{-j\omega}Y(e^{j\omega}) - \frac{1}{6}e^{-j2\omega}Y(e^{j\omega}) = X(e^{j\omega})\\
+    \end{align*}
+By applying Inverse Discrete-Time Fourier transform on both sides;
+    \begin{align*}
+        y(n) - \frac{1}{6}y(n-1) - \frac{1}{6}y(n-2) = x(n)\\
+    \end{align*}
+So the difference equation is
+    \begin{align*}
+        y(n) - \frac{1}{6}y(n-1) - \frac{1}{6}y(n-2) = x(n)
+    \end{align*}
+    
+    
+    \item %write the solution of q6b
+    The difference equation by part a;\\
+    \begin{align*}
+        y(n) - \frac{1}{6}y(n-1) - \frac{1}{6}y(n-2) = x(n)
+    \end{align*}
+    By comparing with linear constant coefficient difference equation;
+    \begin{align*}
+        a_0 y(n) + a_1 y(n-1) + a_2 y(n-2)+...+a_N y(n-N) = b_0 x(n) + b_1 x(n-1)+...+b_M X(n-M)
+    \end{align*}
+    Here \(a_0 = 1, a_1 = \frac{-1}{6}, a_2 = \frac{-1}{6}, b_0 = 1\)\\
+    So the block diagram by using this form;
+    \\
+\begin{center}
+    
+    \tikzset{%
+    		block/.style    = {draw, thick, rectangle, minimum height = 3em,
+    			minimum width = 3em},
+    		sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+    		sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+    		input/.style    = {coordinate}, % Input
+    		output/.style   = {coordinate} % Output
+    	}
+    	% Defining string as labels of certain blocks.
+    	\newcommand{\suma}{\Large$+$}
+    	\newcommand{\sumb}{\Large$+$}
+    	\newcommand{\inte}{$\displaystyle Z^{-1}$}
+    	\newcommand{\derv}{\huge$\frac{d}{dt}$}
+    	
+    	\begin{tikzpicture}[auto, thick, node distance=3cm, >=triangle 45]
+    	\draw
+    	% Drawing the blocks of first filter :
+    	node at (0, 0) [input] (inp) {\Large \textopenbullet}
+    	node [sum, right of=inp] (suma) {\suma}
+    	node [sum, below of=suma] (sumb) {\sumb}
+    	node [block, right of=sumb] (inta) {$Z^{-1}$}
+    	node [block, below of=inta] (intb) {$Z^{-1}$}
+    	node [output, right of=suma] (out) {}
+    	node [output, right of=out] (out2) {}
+    	node [output, right of=out2] (out3) {}
+    	node [output, below of=out] (temp1) {}
+    	node [output, below of=suma] (temp2) {}
+    	node [output, below of=intb] (temp3) {}
+    	node [output, below of=sumb] (temp4) {}
+    	;
+    	\draw[->](inp) -- node{$x(n)$} (suma);
+    	\draw[->](suma) -- node{$a_0 = 1$}(out);
+    	\draw[->](out) -- node{$b_0 = 1$} (out2);
+    	\draw[-](out) -- (inta);
+    	\draw[.](out2) -- node{$y(n)$}(out3);
+    	\draw[->](sumb) -- (suma);
+    	\draw[-](inta) -- (intb);
+    	\draw[->](inta) -- node{$-a_1 = \frac{1}{6}$} (sumb);
+    	\draw[->](temp4) -- (sumb);
+    	\draw[-](intb) -- node{$-a_2 = \frac{1}{6}$} (temp4);
+	\end{tikzpicture}
+    
+    
+\end{center}
+    \item %write the solution of q6c
+    Given;
+    \begin{align*}
+        H(e^{j\omega}) = \frac{1}{1 - \frac{1}{6}e^{-j\omega} - \frac{1}{6}e^{-j2\omega}}\\
+        H(e^{j\omega}) = \frac{6}{6 - e^{-j\omega} - e^{-j2\omega}}\\
+        H(e^{j\omega}) = \frac{6}{6 - 3e^{-j\omega} + 2e^{-j\omega} -e^{-j2\omega}}\\
+        H(e^{j\omega}) = \frac{6}{3(2- e^{-j\omega}) + e^{-j\omega}(2 - e^{-j\omega})}\\
+        H(e^{j\omega}) = \frac{6}{(3+e^{-j\omega})(2-e^{-j\omega})}\\
+    \end{align*}
+    
+By applying Partial Fraction; 
+    \begin{align*}
+        \frac{6}{(3+e^{-j\omega})(2-e^{-j\omega})} = \frac{A}{3+e^{-j\omega}} + \frac{B}{2-e^{-j\omega}}\\
+        A= \frac{6}{5}\\
+        B= \frac{6}{5}\\
+        H(e^{j\omega}) = \frac{\frac{6}{5}}{3+e^{-j\omega}} + \frac{\frac{6}{5}}{2-e^{-j\omega}}\\
+        H(e^{j\omega}) = \frac{\frac{6}{5}}{3(1+\frac{1}{3}e^{-j\omega})} + \frac{\frac{6}{5}}{2(1-\frac{1}{2}e^{-j\omega})}\\
+        H(e^{j\omega}) = \frac{\frac{2}{5}}{1+\frac{1}{3}e^{-j\omega}} + \frac{\frac{3}{5}}{1-\frac{1}{2}e^{-j\omega}}\\
+    \end{align*}
+By applying inverse Discrete-Time Fourier transform on both sides;
+    \begin{align*}
+        h(n) = \frac{2}{5} \cdot (\frac{-1}{3})^{n}u(n) + \frac{3}{5} \cdot (\frac{1}{2}^{n})u(n).\\
+    \end{align*}
+    So Impulse Response is;
+    \begin{align*}
+        h(n) = \frac{2}{5} \cdot (\frac{-1}{3})^{n}u(n) + \frac{3}{5} \cdot (\frac{1}{2}^{n})u(n).
+    \end{align*}
+    \end{enumerate}    
+
+\end{enumerate}
+\end{document}
+

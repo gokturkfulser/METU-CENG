@@ -1,0 +1,434 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  Karaman, Arda\\
+  \texttt{e2237568@ceng.metu.edu.tr}
+  \and
+  Fulser, Göktürk\\
+  \texttt{e2237386@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2021 \\
+Homework 2}
+
+\begin{filecontents}{q1.dat}
+ n   xn
+ 0   0
+ 1   1  
+ 2   -1
+ 3   1
+ 4   -1 
+ 5   1
+ 6   -1
+ 7   1
+\end{filecontents}
+
+\begin{filecontents}{q2.dat}
+ n   xn
+-3   6
+-2   0
+-1   0
+ 0   2
+ 1   3  
+ 2   0
+ 3   0
+ 4   1 
+\end{filecontents}
+
+\begin{filecontents}{q3.dat}
+ n   xn
+ -2   1
+ -1   2 
+ 0   2
+ 1   1  
+ 2   0
+ 3   0
+ 4   0 
+\end{filecontents}
+
+\begin{filecontents}{q7.dat}
+ n   xn
+-1  0
+ 0   0  
+ 1   0
+ 2   0
+ 3   1 
+ 4   0
+ 5  -1
+ 6   0
+\end{filecontents}
+
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item %write the solution of q1
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    \begin{align}
+        \int x(t) - 5 \cdot y(t) - (\int 6 \cdot y(t)dt) \cdot dt = y(t) \\
+        y^{\prime\prime}(t) + 5 \cdot y^{\prime}(t) + 6 \cdot y(t) = x^{\prime}(t)
+    \end{align}
+    \item %write the solution of q1b
+    The complete solution consists two parts; a homogeneous and a particular solution. \\
+    \begin{align}
+        y(t) = y_{h}(t) + y_{p}(t)
+    \end{align}
+    The system is initially at rest and with the homogeneous solution;
+    \begin{align}
+        y_{h}(t) = K e^{\alpha t} \\
+        (\alpha^{2} + 5 \alpha + 6) \cdot Ke^{\alpha t} = 0 \\
+        (\alpha + 2) \cdot (\alpha + 3) = 0 \\
+        \alpha_{1,2} = -2,-3
+    \end{align}
+    Therefore there are 2 solutions for the homogeneous part of the system.
+    For the particular solution:
+    \begin{align}
+        x(t) = (e^{-t} + e^{-4t})u(t) \\
+        y_{p}(t) = \alpha e^{-t} + \beta e^{-4t} \\
+        \alpha e^{-t} + 16\beta e^{-4t} + 5 (-\alpha e^{-t} - 16\beta e^{-4t}) + 6 (\alpha e^{-t} + 16\beta e^{-4t}) =  (e^{-t} + e^{-4t})^{\prime} \\
+        2 \alpha e^{-t} + 2\beta e^{-4t} = -e^{-t} -4 \cdot e^{-4t} \\ 
+        \alpha = -\frac{1}{2} , \beta = -2
+    \end{align}
+    Summing up the y(t):
+    \begin{align}
+        y(t) = y_{h}(t) + y_{p}(t) \\
+        y(t) = Ke^{-2t} - \frac{1}{2} e^{-t} - 2 \cdot e^{-4t} \\
+    \end{align}
+    Since the system is initially at rest;
+    \begin{align}
+        y(0) = 0 \\
+        0 = K - \frac{1}{2} - 2 \\
+        \frac{5}{2} =  K
+    \end{align}
+    Therefore the final result is,
+    \begin{align}
+        y(t) = (-\frac{1}{2} e^{-t} - 2\cdot e^{-4t} + \frac{5}{2} \cdot e^{-2t})u(t)
+    \end{align}
+    
+    \end{enumerate}
+
+\item %write the solution of q2
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q2a
+    x(n) can be written as :
+    \begin{align*}
+        x(n) = \delta(n) + \delta(n-1) \\
+        y(n) = \delta(n-1)
+    \end{align*}
+    
+    $x^{\prime} $ can be written w.r.t. x(n) as
+    \begin{align*}
+        x^{\prime} = x(n) - x(n-2)
+    \end{align*}
+    
+    By the linearity theorem:
+    \begin{align*}
+        x(n) \longrightarrow y(n) \\
+        x(n-2) \longrightarrow y(n-2) 
+    \end{align*}
+    Therefore,
+    \begin{align*}
+        y^{\prime}(n) = y(n) - y(n-2) \\
+        = \delta(n-1) - \delta(n-3)
+    \end{align*}
+    
+    \item %write the solution of q2b
+    
+    
+    
+    \begin{align*}
+        Y(Z) = X(Z) \cdot H(Z) \\
+        H(Z) = \frac{Y(Z)}{X(Z)} \\ 
+        x(n) = \delta(n) + \delta(n+1) \Longrightarrow X(Z) = 1 + Z^{-1} = \frac{1+ Z}{Z} \\
+        y(n) = \delta(n-1) \Longrightarrow y(Z) = Z^{-1} = \frac{1}{Z} \\
+        H(Z) = \frac{\frac{1}{Z}}{\frac{Z+1}{Z}} = \frac{1}{Z+1} = \frac{Z^{-1}}{1+ Z^{-1}}
+    \end{align*}
+    The impulse response, \\
+    \begin{figure} [h!]
+        \centering
+        \begin{tikzpicture}[scale=1.0] 
+          \begin{axis}[
+              axis lines=middle,
+              xlabel={$n$},
+              ylabel={$\boldsymbol{h[n]}$},
+              xtick={ -1, 0,  ..., 8},
+              ytick={ -2, -1, ..., 2},
+              ymin=-2, ymax=2,
+              xmin=-1, xmax=8,
+              every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+              every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+              grid,
+            ]
+            \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q1.dat};
+          \end{axis}
+        \end{tikzpicture}
+        \caption{$n$ vs. $h[n]$.}
+        \label{fig:q2}
+    \end{figure}
+    
+    \item %write the solution of q2c
+    In the last part we figured out that,
+    \begin{align*}
+        H(Z) = \frac{1}{Z+1} \\
+        \frac{Y(Z)}{X(Z)} = \frac{Z^{-1}}{1+ Z^{-1}}
+    \end{align*}
+    So that, 
+    \begin{align*}
+        (1 + Z^{-1}) \cdot Y(Z) = Z^{-1} \cdot X(Z) \Longrightarrow X(Z) + Z^{-1} \cdot Y(Z) = Z^{-1} \cdot X(Z)
+    \end{align*}
+    And by taking the inverse z-transform of the equation above,
+    \begin{align}
+        y(n) + y(n-1) = x(n-1)
+    \end{align}
+    
+    \item %write the solution of q2d
+    We have already got the equation, 
+    \begin{align}
+        Y(Z) = \frac{Z^{-1}}{1 + Z^{-1}} \cdot X(Z)
+    \end{align}
+    from the last part.
+    So the block diagram of the total system is, \\
+    
+    \begin{center}
+    	\tikzset{%
+    		block/.style    = {draw, thick, rectangle, minimum height = 3em,
+    			minimum width = 3em},
+    		sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+    		input/.style    = {coordinate}, % Input
+    		output/.style   = {coordinate} % Output
+    	}
+    	% Defining string as labels of certain blocks.
+    	\newcommand{\suma}{\Large$+X$}
+    	\newcommand{\inte}{$\displaystyle Z^{-1}$}
+    	\newcommand{\derv}{\huge$\frac{d}{dt}$}
+    	
+    	\begin{tikzpicture}[auto, thick, node distance=2cm, >=triangle 45]
+    	\draw
+    	% Drawing the blocks of first filter :
+    	node at (0, 0) [input] (inp) {\Large \textopenbullet}
+    	node [sum, right of=inp] (sum) {\suma}
+    	node [block, right of=sum] (int) {\inte}
+    	node [output, right of=int] (out) {}
+    	node [output, right of=out] (out2) {\Large \textopenbullet}
+    	node [output, below of=out] (temp1) {}
+    	node [output, below of=sum] (temp2) {}
+    	;
+    	\draw[->](inp) -- node{$X(Z)$} (sum);
+    	\draw[->](sum) -- (int);
+    	\draw[-](int) -- (out);
+    	\draw[->](out) -- node{$Y(Z)$} (out2);
+    	\draw[-](out) -- (temp1);
+    	\draw[->](temp2) -- (sum);
+    	\draw[-](temp1) -- node{$-H(Z)$} (temp2);
+	\end{tikzpicture}
+\end{center}
+    
+    
+    \end{enumerate}
+
+\item %write the solution of q3  
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q3a
+    
+    \(x[n] = \delta[n-3] + 2\delta[n+1], \)\\
+    \(h[n] = \delta[n-1] + 3\delta[n+2], \)\\
+    To use \(h[n]\)  or \(x[n]\)  we have to divide one of them.
+    Therefore;\\
+    We divide \(h[n]\) into two sub-parts using the distribution property of convolution operator. \\
+     \begin{align}
+        (h[n] = h_a[n] + h_b[n]
+    \end{align}
+    \begin{align}
+        h_a[n] =3\delta[n+2] , h_b[n] = \delta[n-1]
+    \end{align}
+    So \(y[n]\) becomes \(y[n] = x[n] \ast h_a[n] + x[n] \ast h_b[n]\)\\
+    \(y_a[n] = (\delta[n-3] + 2\delta[n+1]) \ast 3\delta[n+2] = 3\delta[n-1] + 6\delta[n+3] \)\\
+    \(y_b[n] = (\delta[n-3] + 2\delta[n+1]) \ast \delta[n-1] = \delta[n-4] + 2\delta[n] \)\\
+    So \(y[n] =  3\delta[n-1] + 6\delta[n+3] + \delta[n-4] + 2\delta[n].\)\\
+    \begin{figure} [h!]
+        \centering
+        \begin{tikzpicture}[scale=1.0] 
+          \begin{axis}[
+              axis lines=middle,
+              xlabel={$n$},
+              ylabel={$\boldsymbol{y[n]}$},
+              xtick={ -3, -2, -1, 0,  ..., 4},
+              ytick={-1, 0,  ..., 6},
+              ymin=-1, ymax=6,
+              xmin=-3, xmax=4,
+              every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+              every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+              grid,
+            ]
+            \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q2.dat};
+          \end{axis}
+        \end{tikzpicture}
+        \caption{$n$ vs. $y[n]$.}
+        \label{fig:q3}
+    \end{figure}
+    
+    
+    \item %write the solution of q3b
+    \(h[n] = u[n-1] - u[n-3], \)\\
+    We can write \(h[n]\) in unit impulse form as follows: 
+    \begin{align}
+        h[n] = \delta[n-1] + \delta[n-2] \\
+        x[n] = u[n+3] + u[n] 
+    \end{align}
+    We can write \(x[n]\) in unit impulse form as follows:
+    \begin{align}
+        x[n] = \delta[n+3] + \delta[n+2] + \delta[n+1]
+    \end{align}
+    \(h[n] = h_a[n] + h_b[n]\) by distribution property \\
+    So \(h_a[n] = \delta[n-1], h_b[n] = 3\delta[n-2] \ and \ y[n] = x[n] \ast h_a[n] + x[n] \ast h_b[n]\)\\
+    \begin{align*}
+        y_a[n] = (\delta[n+3] + \delta[n+2] + \delta[n+1]) \ast \delta[n-1] = \delta[n+2] + \delta[n+1] + \delta[n]. \\
+        y_b[n] = (\delta[n+3] + \delta[n+2] + \delta[n+1]) \ast \delta[n-2] = \delta[n+1] + \delta[n] + \delta[n-1].
+    \end{align*}
+    So \(y[n] = \delta[n+2] + 2\delta[n+1]+ 2\delta[n] + \delta[n-1].\)\\
+    
+    The figure is above.
+    
+    \begin{figure} [ht!]
+        \centering
+        \begin{tikzpicture}[scale=1.0] 
+          \begin{axis}[
+              axis lines=middle,
+              xlabel={$n$},
+              ylabel={$\boldsymbol{y[n]}$},
+              xtick={-4 ,-3, -2, -1,  ..., 5},
+              ytick={-1, 0,  ..., 4},
+              ymin=-1, ymax=4,
+              xmin=-4, xmax=5,
+              every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+              every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+              grid,
+            ]
+            \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q3.dat};
+          \end{axis}
+        \end{tikzpicture}
+        \caption{$n$ vs. $y[n]$. from question 3b}
+        \label{fig:q3}
+    \end{figure}
+    
+    
+    \end{enumerate}
+
+\item %write the solution of q4
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q4a
+    \(h(t) = e^{-3t}u(t) ,\ x(t) = e^{-2t}u(t) \\ y(t) = x(t) \ast h(t) \) \\
+    \(y(t) =  \int_{0}^{t} (e^{-2\tau} e^{-3(t-\tau)} d\tau) = \int_{0}^{t} (e^{-2\tau} e^{-3t} e^{3\tau} d\tau) \) \\
+    \(y(t) = e^{-3t}\int_{0}^{t}(e^\tau d\tau)=e^{-3t}(e^{t}-1) \)\\
+    So \(y(t)=(e^{-2t}-e^{-3t})u(t)\)
+    \item %write the solution of q4b
+    \(h(t) = e^{-2t}u(t), \ x(t) = u(t) - u(t-2)\)\\
+    \(y(t) = x(t) \ast h(t) \)\\
+    \(y(t) = \int_{0}^{t}x(t)h(t-\tau)d\tau\)\\
+    \(y(t) = u(t)\int_{0}^{t}(e^{-2(t-\tau)} d\tau)-
+    u(t-2)\int_{0}^{t}(e^{-2(t-\tau)} d\tau)\)\\
+    \(y(t) = u(t)(e^{-2t}(e^{2t}-1))-u(t-2)(e^{-2t}(e^{2t}-1))\)\\
+    So \(y(t) = (1-e^{-2t})\cdot (u(t)-u(t-2))\)
+    \end{enumerate}
+
+\item %write the solution of q5
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q5a
+    \begin{align}
+        s[n] = nu[n] \\
+        h[n] = nu[n]-(n-1)u[n-1] = u[n-1]
+    \end{align}
+
+    \item %write the solution of q5b
+    \begin{align}
+        y[n] - y[n-1] = x[n] \ast (h[n] - h[n-1]) \\
+        x[n-1] = \delta[n] - 2\delta[n-1] + \delta[n-2] = x[n] \ast \delta[n-1] \\
+        x[n] = \delta[n+1] - 2\delta[n] + \delta[n-1]
+    \end{align}
+    
+    \item %write the solution of q5c
+    \begin{align}
+        y[n] = y[n+1] - x[n]
+    \end{align}
+    
+    \end{enumerate}
+
+\item %write the solution of q6
+\(s(t) = \frac{1}{2}t^{2}u(t).\)\\
+\(h(t) = \frac{ds(t)}{dt} = tu(t),x(t) = e^{-t}u(t) .\)\\
+\(y(t) = h(t) \ast x(t)\)\\
+\(h(t-\tau) = (t-\tau)u(t-\tau)\)\\
+\(y(t) = \int_{0}^{t}e^{-\tau}(t-\tau)d\tau\)\\
+\(y(t) = t\int_{0}^{t}e^{-\tau}d\tau - \int_{0}^{t}e^{-\tau}\tau d\tau \)\\
+\(y(t) = t(1-e^{-t}) + te^{-t} + e^{-t} -1\)\\
+So \(y(t) = t + e^{-t} -1.\)
+\item %write the solution of q7
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q7a
+    \(x(t) = u(t) \)\\
+    \(y(t) = u(t-3) - u(t-5)\)\\
+    \(h(t) =  \delta(t-3)-\delta(t-5)\)\\ \\
+    The figure is below.
+    \begin{figure} [ht!]
+        \centering
+        \begin{tikzpicture}[scale=1.0] 
+          \begin{axis}[
+              axis lines=middle,
+              xlabel={$n$},
+              ylabel={$\boldsymbol{h[n]}$},
+              xtick={-1,  ..., 6},
+              ytick={-2, -1, 0,  ..., 2},
+              ymin=-2, ymax=2,
+              xmin=-1, xmax=6,
+              every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+              every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+              grid,
+            ]
+            \addplot [ycomb, black, thick, mark=*] table [x={n}, y={xn}] {q7.dat};
+          \end{axis}
+        \end{tikzpicture}
+        \caption{$n$ vs. $h[n]$(continuous impulse response) from question 7a}
+        \label{fig:q7}
+    \end{figure}
+    \item %write the solution of q7b
+    \(x(t) = e^{-3t}u(t)\)\\
+    \(x(t-\tau) = e^{-3(t-\tau)}\)\\
+    \(y(t) = \int_{0}^{t}x(t-\tau)h(\tau)d\tau\)\\
+    \(y(t) = \int_{0}^{t}e^{-3(t-\tau)}d\tau\)\\
+    \(y(t) = e^{-3t}(e^{3t}-1)\)\\
+    So \(y(t) = (1-e^{-3t})(\delta(t-3)-\delta(t-5))\)
+    \item %write the solution of q7c
+    \end{enumerate}    
+
+\end{enumerate}
+\end{document}
+

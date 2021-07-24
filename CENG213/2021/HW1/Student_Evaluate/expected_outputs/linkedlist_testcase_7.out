@@ -1,0 +1,20 @@
+-> Creating a linked list with default constructor.
+-> Making some insertions to the list.
+-> Printing the list.
+31
+32
+33
+34
+35
+-> Printing the list in reverse.
+35
+34
+33
+32
+31
+-> Calculating the size including dummies.
+size is 7
+-> Calculating the size.
+size is 5
+-> Checking if the list is empty or not.
+linked list is not empty

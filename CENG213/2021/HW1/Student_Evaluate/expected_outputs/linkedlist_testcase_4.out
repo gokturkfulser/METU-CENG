@@ -1,0 +1,8 @@
+-> Creating a linked list with default constructor.
+-> Inserting a node with data 34 to the beginning of the list.
+-> Printing the list.
+34
+-> Printing the list in reverse.
+34
+-> Calculating the size including dummies.
+size is 3
